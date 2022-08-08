@@ -6,14 +6,15 @@
 // кількість - червоним.Для додавання стилів використовуй CSS-класи valid і invalid, які ми вже 
 // додали у вихідні файли завдання.
 
-const validBtnEl = document.querySelector("#validation-input");
-validBtnEl.addEventListener("blur", onBlurCheck); //событие + функция
-function onBlurCheck() {
-  if (validBtnEl.value.length === Number(validBtnEl.dataset.length)) {
-    validBtnEl.classList.add("valid");
-    validBtnEl.classList.remove("invalid");
+const inputVal = document.querySelector("#validation-input");
+inputVal.addEventListener("blur", validCheck);
+
+function validCheck() {
+  if (inputVal.value.length === Number(inputVal.dataset.length)) {
+    inputVal.classList.add("valid");
+    inputVal.classList.remove("invalid");
   } else {
-    validBtnEl.classList.remove("valid");
-    validBtnEl.classList.add("invalid");
+    inputVal.classList.remove("valid");
+    inputVal.classList.add("invalid");
   }
 }
