@@ -22,3 +22,20 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.cats__gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: -15px;
+}
+
+.cats__item {
+  margin: 15px;
+  width: calc((100% - 3 * 30px) / 3);
+}
+
+.cats__img {
+  width: 100%;
+}
