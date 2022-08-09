@@ -17,11 +17,21 @@
 const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Condiments'];
 
 const ingList = document.querySelector('ul#ingredients');
-const newArr = [];
-ingredients.forEach(ing => {
-  let liItem = document.createElement('li');
-  liItem.textContent = ing;
-  liItem.classList.add('item');
-  newArr.push(liItem);
-});
-ingList.append(...newArr);
+
+// const newArr = [];
+// ingredients.forEach(ing => {
+//   let liItem = document.createElement('li');
+//   liItem.textContent = ing;
+//   liItem.classList.add('item');
+//   newArr.push(liItem);
+// });
+
+// ingList.append(...newArr);
+
+
+const arrayIng = ingredients
+.map(ing => `<li class="item">${ing}</li>`)
+.join("");
+ingList.insertAdjacentHTML("afterbegin", arrayIng);
+
+
